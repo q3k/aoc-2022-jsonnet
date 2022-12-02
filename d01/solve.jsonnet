@@ -15,8 +15,7 @@ local max(els) = std.foldl(function(a, b) std.max(a, b), els, els[0]);
 
 local sums = [sum(e) for e in elves];
 
-// part1:
-// max(sums)
-
-// part2:
-sum(std.reverse(std.sort(sums))[0:3])
+{
+  part1: max(sums),
+  part2: sum(std.reverse(std.sort(sums))[0:3]),
+}
