@@ -1,12 +1,9 @@
 local input = importstr 'input.txt';
 local lines = [l for l in std.split(input, '\n') if l != ''];
 
-local lowercase = 'abcdefghijklmnopqrstuvwxyz';
-local uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+local valuearr = ' abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-local value(el) = if std.member(lowercase, el) then (std.codepoint(el) - 96)
-             else if std.member(uppercase, el) then (std.codepoint(el) - 38)
-             else error 'invalid value';
+local value(el) = std.findSubstr(el, valuearr)[0];
 local sum(els) = std.foldl(function(a, b) a + b, els, 0);
 
 local rucksacks = [
