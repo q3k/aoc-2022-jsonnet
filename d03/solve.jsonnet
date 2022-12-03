@@ -5,8 +5,8 @@ local lowercase = 'abcdefghijklmnopqrstuvwxyz';
 local uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 local value(el) = if std.member(lowercase, el) then (std.codepoint(el) - 96)
-else if std.member(uppercase, el) then (std.codepoint(el) - 38)
-else error 'invalid value';
+             else if std.member(uppercase, el) then (std.codepoint(el) - 38)
+             else error 'invalid value';
 local sum(els) = std.foldl(function(a, b) a + b, els, 0);
 
 local rucksacks = [
